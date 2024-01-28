@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse, NextRequest, NextMiddleware } from 'next/server';
 
 // Stop Middleware running on static files and public folder
 export const config = {
@@ -16,9 +16,8 @@ export const config = {
   ],
 };
 
-export function middleware(_: NextRequest, res: NextResponse) {
-  // Add a header to all requests
-  const headers = new Headers(res.headers);
+export const middleware: NextMiddleware = (req: NextRequest) => {
+  const headers = new Headers(req.headers);
   headers.set('x-michalczukm', new Date().toUTCString());
 
   return NextResponse.next({

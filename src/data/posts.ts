@@ -1,9 +1,20 @@
 import { Post } from '@mm/types';
 
+const IN_MEMORY: Post[] = [];
+
+const getEntities = async () => {
+  if (IN_MEMORY.length) return IN_MEMORY;
+
+  const { posts } = await import('./posts.json');
+  IN_MEMORY.push(...posts);
+
+  return IN_MEMORY;
+}
+
 export const getPosts = async (
   filter: Partial<Post> = {}
 ): Promise<readonly Post[]> => {
-  const { posts } = await import('./posts.json');
+  const posts = await getEntities();
 
   const filters = Object.entries(filter).filter(
     ([_, value]) => value !== undefined
@@ -21,3 +32,12 @@ export const getPosts = async (
 
 export const getPost = async (id: Post['id']): Promise<Post | undefined> =>
   (await getPosts({ id })).at(0);
+
+export const createPost = async (post: Post): Promise<Post> => {
+  const posts = await getPosts();
+  const newPost = { ...post, id: posts.length + 1 };
+
+  IN_MEMORY.push(newPost);
+  
+  return newPost;
+};

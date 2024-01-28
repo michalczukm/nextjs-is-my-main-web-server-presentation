@@ -1,4 +1,4 @@
-import { getPosts } from '@mm/data/posts';
+import { createPost, getPosts } from '@mm/data/posts';
 import { Post } from '@mm/types';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -17,4 +17,12 @@ export async function GET(request: NextRequest): Promise<NextResponse<readonly P
   }
   
   return NextResponse.json((await getPosts(filter)));
+}
+
+export async function POST(request: NextRequest): Promise<NextResponse<Post>> {
+  const post = await request.json();
+  const newPost = await createPost(post);
+  const location = `${request.nextUrl.clone().href}/${newPost.id}`;
+
+  return NextResponse.json((newPost), { status: 201, headers: { location } });
 }
