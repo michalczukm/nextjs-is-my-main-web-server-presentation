@@ -3,6 +3,8 @@ import { getPost } from '@mm/data/posts';
 import { Post, Comment } from '@mm/types';
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'nodejs' 
+
 // Waaay not-RESTful endpoint, but let's go with it to demonstrate the nested slugs :D
 export async function GET(
   _: NextRequest,
