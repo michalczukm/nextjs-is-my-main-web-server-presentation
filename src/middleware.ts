@@ -4,7 +4,7 @@ import { configuration } from './configuration';
 
 export const config = {
   matcher: [
-    '/api/((?!greet|token|$).*)',
+    '/api/((?!health|greet|token|$).*)',
   ],
 };
 
