@@ -9,7 +9,7 @@ const getEntities = async () => {
   IN_MEMORY.push(...posts);
 
   return IN_MEMORY;
-}
+};
 
 export const getPosts = async (
   filter: Partial<Post> = {}
@@ -38,6 +38,19 @@ export const createPost = async (post: Post): Promise<Post> => {
   const newPost = { ...post, id: posts.length + 1 };
 
   IN_MEMORY.push(newPost);
-  
+
   return newPost;
+};
+
+export const updatePost = async (id: Post['id'], post: Post): Promise<Post | undefined> => {
+  const posts = await getPosts();
+  const storedPost = posts.find(p => p.id === id);
+
+  const index = storedPost && IN_MEMORY.indexOf(storedPost);
+  if (index !== undefined && index !== -1) {
+    IN_MEMORY[index] = post;
+    return post;
+  }
+
+  return undefined
 };

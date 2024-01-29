@@ -19,10 +19,11 @@ export async function GET(request: NextRequest): Promise<NextResponse<readonly P
   return NextResponse.json((await getPosts(filter)));
 }
 
+// No validation - just go with the flow
 export async function POST(request: NextRequest): Promise<NextResponse<Post>> {
   const post = await request.json();
   const newPost = await createPost(post);
-  const location = `${request.nextUrl.clone().href}/${newPost.id}`;
+  const location = `${request.nextUrl.href}/${newPost.id}`;
 
   return NextResponse.json((newPost), { status: 201, headers: { location } });
 }
