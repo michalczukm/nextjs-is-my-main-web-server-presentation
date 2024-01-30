@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "postId": 1,
+      "id": 1,
+      "author": "John Doe",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "postId": 1,
+      "id": 2,
+      "author": "Jane Doe",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "postId": 1,
+      "id": 3,
+      "author": "John Smith",
+      "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+      "postId": 1,
+      "id": 4,
+      "author": "Jane Smith",
+      "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "postId": 2,
+      "id": 5,
+      "author": "John Doe",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "postId": 2,
+      "id": 6,
+      "author": "Jane Doe 3",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "postId": 2,
+      "id": 7,
+      "author": "John Smith 2",
+      "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+      "postId": 2,
+      "id": 8,
+      "author": "Jane Smith 2",
+      "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "postId": 3,
+      "id": 9,
+      "author": "John Doe",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "postId": 3,
+      "id": 10,
+      "author": "Jane Doe 4",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "postId": 3,
+      "id": 11,
+      "author": "John Smith 3",
+      "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+      "postId": 3,
+      "id": 12,
+      "author": "Jane Smith 3",
+      "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "postId": 4,
+      "id": 13,
+      "author": "John Doe",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "postId": 4,
+      "id": 14,
+      "author": "Jane Doe 5",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "postId": 4,
+      "id": 15,
+      "author": "John Smith 4",
+      "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+      "postId": 4,
+      "id": 16,
+      "author": "Jane Smith 4",
+      "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "postId": 5,
+      "id": 17,
+      "author": "John Doe",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "postId": 5,
+      "id": 18,
+      "author": "Jane Doe 6",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "postId": 5,
+      "id": 19,
+      "author": "John Smith 5",
+      "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+      "postId": 5,
+      "id": 20,
+      "author": "Jane Smith 5",
+      "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ]
+}
