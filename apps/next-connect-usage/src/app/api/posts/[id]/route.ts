@@ -33,14 +33,14 @@ const assertContentType =
 const validatePayload =
   <T extends ZodRawShape>(schema: z.ZodObject<T>) =>
   async (request: NextRequest, _context: RequestContext) => {
-    const parseResult = await schema.safeParseAsync((await request.json()));
+    const parseResult = await schema.safeParseAsync(await request.json());
 
     if (!parseResult.success) {
       const error = parseResult.error;
       return NextResponse.json({ error }, { status: 400 });
     }
 
-    return parseResult.data; 
+    return parseResult.data;
   };
 
 const router = createEdgeRouter<NextRequest, RequestContext>();
@@ -60,7 +60,7 @@ router
     if (result instanceof NextResponse) {
       return result;
     }
-    
+
     const id = +context.params.id;
     const updated = await updatePost(id, result);
     if (!updated) {
@@ -71,10 +71,16 @@ router
     return NextResponse.json(updated, { status: 200, headers: { location } });
   });
 
-  export async function GET(request: NextRequest, ctx: RequestContext) {
-    return router.run(request, ctx);
-  }
-  
-  export async function PUT(request: NextRequest, ctx: RequestContext) {
-    return router.run(request, ctx);
-  }
+export async function GET(
+  request: NextRequest,
+  ctx: RequestContext
+): Promise<Response> {
+  return (await router.run(request, ctx)) as Response;
+}
+
+export async function PUT(
+  request: NextRequest,
+  ctx: RequestContext
+): Promise<Response> {
+  return (await router.run(request, ctx)) as Response;
+}

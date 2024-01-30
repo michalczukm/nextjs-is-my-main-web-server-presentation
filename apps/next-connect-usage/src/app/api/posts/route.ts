@@ -32,10 +32,9 @@ router
     return NextResponse.json(newPost, { status: 201, headers: { location } });
   });
 
-export async function GET(request: NextRequest) {
-  return router.run(request, {});
+export async function GET(request: NextRequest): Promise<Response> {
+  return (await router.run(request, {})) as Response;
 }
-
-export async function POST(request: NextRequest) {
-  return router.run(request, {});
+export async function POST(request: NextRequest): Promise<Response> {
+  return (await router.run(request, {})) as Response;
 }

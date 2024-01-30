@@ -25,6 +25,6 @@ router.get(async (_request, context) => {
 });
 
 // Waaay not-RESTful endpoint, but let's go with it to demonstrate the nested slugs :D
-export async function GET(request: NextRequest, ctx: RequestContext) {
-  return router.run(request, ctx);
+export async function GET(request: NextRequest, ctx: RequestContext): Promise<Response> {
+  return await router.run(request, ctx) as Response;
 }
