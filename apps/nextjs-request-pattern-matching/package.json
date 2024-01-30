@@ -1,19 +1,19 @@
 {
-  "name": "next-connect-usage",
+  "name": "nextjs-request-pattern-matching",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "PORT=3011 next dev",
+    "dev": "PORT=3012 next dev",
     "build": "next build",
-    "start": "PORT=3011 next start",
+    "start": "PORT=3012 next start",
     "lint": "next lint"
   },
   "dependencies": {
     "jose": "^5.2.0",
     "next": "14.1.0",
-    "next-connect": "^1.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "ts-pattern": "^5.0.6",
     "zod": "^3.22.4"
   },
   "devDependencies": {

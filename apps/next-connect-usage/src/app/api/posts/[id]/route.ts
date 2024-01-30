@@ -33,7 +33,7 @@ const assertContentType =
 const validatePayload =
   <T extends ZodRawShape>(schema: z.ZodObject<T>) =>
   async (request: NextRequest, _context: RequestContext) => {
-    const parseResult = await schema.safeParseAsync(JSON.parse((await request.text())));
+    const parseResult = await schema.safeParseAsync((await request.json()));
 
     if (!parseResult.success) {
       const error = parseResult.error;
