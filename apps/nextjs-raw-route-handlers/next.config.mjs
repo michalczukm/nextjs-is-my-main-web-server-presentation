@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: [
-    "react-syntax-highlighter",
-    "swagger-client",
-    "swagger-ui-react",
+    'react-syntax-highlighter',
+    'swagger-client',
+    'swagger-ui-react',
   ],
+  experimental: {
+    instrumentationHook: true,
+  },
   headers: async () => [
     {
       source: '/api/:path*',
