@@ -1,13 +1,9 @@
 import { Post } from '../types';
+import { posts } from './posts.json'
 
-const IN_MEMORY: Post[] = [];
+const IN_MEMORY: Post[] = posts;
 
 const getEntities = async () => {
-  if (IN_MEMORY.length) return IN_MEMORY;
-
-  const { default: { posts } } = await import('./posts.json', { with: { type: 'json' } });
-  IN_MEMORY.push(...posts);
-
   return IN_MEMORY;
 };
 

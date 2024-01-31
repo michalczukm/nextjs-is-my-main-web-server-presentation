@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "PORT=3013 TS_NODE_FILES=true TS_NODE=true tsx watch --clear-screen=false src/index.ts | pino-pretty",
-    "start": "PORT=3013 node dist/index.js | pino-pretty",
+    "start": "NODE_ENV=production PORT=3013 node dist/index.js | pino-pretty",
     "build": "tsc -p tsconfig.json",
     "test": "tsc --noEmit"
   },

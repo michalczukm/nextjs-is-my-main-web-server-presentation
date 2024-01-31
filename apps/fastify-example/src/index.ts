@@ -1,7 +1,7 @@
 import fastify, { FastifyInstance } from 'fastify';
 import { authRoutes, openRoutes } from './routes';
 
-export const server: FastifyInstance = fastify({ logger: true });
+export const server: FastifyInstance = fastify({ logger: process.env.NODE_ENV !== 'production'});
 
 server.register(openRoutes, { prefix: '/api' });
 server.register(authRoutes, { prefix: '/api' });

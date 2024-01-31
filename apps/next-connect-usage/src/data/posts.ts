@@ -1,13 +1,9 @@
-import { Post } from '@mm/types';
+import { Post } from '../types';
+import { posts } from './posts.json'
 
-const IN_MEMORY: Post[] = [];
+const IN_MEMORY: Post[] = posts;
 
 const getEntities = async () => {
-  if (IN_MEMORY.length) return IN_MEMORY;
-
-  const { posts } = await import('./posts.json');
-  IN_MEMORY.push(...posts);
-
   return IN_MEMORY;
 };
 
@@ -33,7 +29,7 @@ export const getPosts = async (
 export const getPost = async (id: Post['id']): Promise<Post | undefined> =>
   (await getPosts({ id })).at(0);
 
-export const createPost = async (post: Post): Promise<Post> => {
+export const createPost = async (post: Omit<Post, "id">): Promise<Post> => {
   const posts = await getPosts();
   const newPost = { ...post, id: posts.length + 1 };
 
