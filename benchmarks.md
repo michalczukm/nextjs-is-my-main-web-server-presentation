@@ -24,7 +24,7 @@ All tests were made on the same machine:
 - macOS: Ventura 13.4
 - node.js: v20.10.0
 
-## Nextjs raw app
+## Nextjs with App Router + Route Handlers
 
 - using `app` and route handlers
 
@@ -85,7 +85,7 @@ Req/Bytes counts sampled once per second.
 180 errors (180 timeouts)
 ```
 
-## Nextjs with pages + API routes
+## Nextjs with Pages Router + API routes
 
 - using `pages` and API route handlers
 
