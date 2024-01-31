@@ -11,11 +11,9 @@ It tested `GET /api/posts` route with simple auth based on JWT.
 - Auth middleware code was same for each project.
 - Same JWT token was used for each benchmark.
 
-
 ```sh
 npx autocannon -c 100 -d 40 -p 10 <SERVICE_URL>/api/posts -H Authorization="Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJvcmc6bWljaGFsY3p1a206aXNzdWVyIiwiYXVkIjoib3JnOm1pY2hhbGN6dWttOmF1ZGllbmNlIn0.CHaB_qZjIuKMYc487Jscj-KCyj1OuW8-e1R1d1n0KucsF2t_XtXNDzjOk7qowhpVLwF_GBzgUvPYoCi3BUmSyQ"
 ```
-
 
 ## Machine
 
@@ -25,7 +23,6 @@ All tests were made on the same machine:
 - RAM: 16 GB
 - macOS: Ventura 13.4
 - node.js: v20.10.0
-
 
 ## Nextjs raw app
 
@@ -86,6 +83,35 @@ Req/Bytes counts sampled once per second.
 
 75k requests in 40.05s, 289 MB read
 180 errors (180 timeouts)
+```
+
+## Nextjs with pages + API routes
+
+- using `pages` and API route handlers
+
+```
+benchmarks git:(master) ✗ npx autocannon -c 100 -d 40 -p 10 localhost:3009/api/posts -H Authorization="Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJvcmc6bWljaGFsY3p1a206aXNzdWVyIiwiYXVkIjoib3JnOm1pY2hhbGN6dWttOmF1ZGllbmNlIn0.CHaB_qZjIuKMYc487Jscj-KCyj1OuW8-e1R1d1n0KucsF2t_XtXNDzjOk7qowhpVLwF_GBzgUvPYoCi3BUmSyQ"
+Running 40s test @ http://localhost:3009/api/posts
+100 connections with 10 pipelining factor
+
+
+┌─────────┬───────┬────────┬────────┬────────┬───────────┬───────────┬─────────┐
+│ Stat    │ 2.5%  │ 50%    │ 97.5%  │ 99%    │ Avg       │ Stdev     │ Max     │
+├─────────┼───────┼────────┼────────┼────────┼───────────┼───────────┼─────────┤
+│ Latency │ 96 ms │ 340 ms │ 363 ms │ 370 ms │ 333.95 ms │ 406.42 ms │ 9675 ms │
+└─────────┴───────┴────────┴────────┴────────┴───────────┴───────────┴─────────┘
+┌───────────┬─────────┬─────────┬─────────┬─────────┬─────────┬────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg     │ Stdev  │ Min     │
+├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+│ Req/Sec   │ 1,957   │ 1,957   │ 2,973   │ 3,131   │ 2,977.8 │ 186.95 │ 1,957   │
+├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+│ Bytes/Sec │ 7.56 MB │ 7.56 MB │ 11.5 MB │ 12.1 MB │ 11.5 MB │ 722 kB │ 7.56 MB │
+└───────────┴─────────┴─────────┴─────────┴─────────┴─────────┴────────┴─────────┘
+
+Req/Bytes counts sampled once per second.
+# of samples: 40
+
+120k requests in 40.04s, 460 MB read
 ```
 
 ## Nextjs with request pattern matching
