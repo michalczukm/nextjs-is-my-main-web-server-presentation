@@ -23,6 +23,9 @@ importers:
       fastify-plugin:
         specifier: ^4.5.1
         version: 4.5.1
+      jose:
+        specifier: ^5.2.0
+        version: 5.2.0
       pino:
         specifier: ^8.17.2
         version: 8.17.2

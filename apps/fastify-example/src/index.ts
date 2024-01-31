@@ -1,9 +1,10 @@
 import fastify, { FastifyInstance } from 'fastify';
-import { routes } from './routes';
+import { authRoutes, openRoutes } from './routes';
 
 export const server: FastifyInstance = fastify({ logger: true });
 
-server.register(routes, { prefix: '/api' });
+server.register(openRoutes, { prefix: '/api' });
+server.register(authRoutes, { prefix: '/api' });
 
 export const run = () => {
   server.listen({
