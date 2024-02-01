@@ -1,6 +1,6 @@
 # Benchmarks
 
-Each benchmark was made with [AutoCannon](https://github.com/mcollina/autocannon) with the following params:
+Benchmarks were made with [AutoCannon](https://github.com/mcollina/autocannon) with the following params:
 
 - `-c 100` - 100 concurrent connections
 - `-d 40` - 40 seconds duration
@@ -54,7 +54,7 @@ Req/Bytes counts sampled once per second.
 330 errors (330 timeouts)
 ```
 
-## next-connect app
+## Nextjs with App Router + Route Handlers + next-connect app
 
 - using `app` and route handlers
 - wrap route handlers with `next-connect`
@@ -114,7 +114,7 @@ Req/Bytes counts sampled once per second.
 120k requests in 40.04s, 460 MB read
 ```
 
-## Nextjs with request pattern matching
+## Nextjs with Pages Router + API routes + request pattern matching
 
 - using `pages` and API route handlers
 - exposes single endpoint and uses `ts-pattern` to match requests
