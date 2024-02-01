@@ -1,4 +1,36 @@
-# Benchmarks
+# "Next.js is my main web server for all APIs. And I like it!" presentation
+
+👋 This is home for "Next.js is my main web server for all APIs. And I like it!" presentation, code examples and benchmark I did.
+
+## 🖥️ Presentation
+
+- [Embedded on the page - click](https://michalczukm.github.io/nextjs-is-my-main-web-server-presentation/)
+- [On slides.com](https://slides.com/michalczukm/nextjs-is-my-main-web-server)
+
+## 💾 Apps
+
+[apps](./apps/) contain monorepo with few apps which I've created while working on this presentation.
+
+I also used them for the benchmark the Next.js as web-server performance 😊
+
+To run all of them:
+
+```sh
+pnpm i
+pnpm start
+```
+
+They will run respectively on ports:
+
+- [nextjs-raw-api-handlers](./apps/nextjs-raw-api-handlers): 3009
+- [nextjs-raw-route-handlers](./apps/nextjs-raw-route-handlers): 3010
+- [next-connect-usage](./apps/next-connect-usage): 3011
+- [nextjs-request-pattern-matching](./apps/nextjs-request-pattern-matching): 3012
+- [fastify-example](./apps/fastify-example): 3013
+
+---
+
+## ⚡️ Benchmarks
 
 Benchmarks were made with [AutoCannon](https://github.com/mcollina/autocannon) with the following params:
 
@@ -15,7 +47,7 @@ It tested `GET /api/posts` route with simple auth based on JWT.
 npx autocannon -c 100 -d 40 -p 10 <SERVICE_URL>/api/posts -H Authorization="Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJvcmc6bWljaGFsY3p1a206aXNzdWVyIiwiYXVkIjoib3JnOm1pY2hhbGN6dWttOmF1ZGllbmNlIn0.CHaB_qZjIuKMYc487Jscj-KCyj1OuW8-e1R1d1n0KucsF2t_XtXNDzjOk7qowhpVLwF_GBzgUvPYoCi3BUmSyQ"
 ```
 
-## Machine
+### 💻 Machine
 
 All tests were made on the same machine:
 
@@ -24,7 +56,7 @@ All tests were made on the same machine:
 - macOS: Ventura 13.4
 - node.js: v20.10.0
 
-## Nextjs with App Router + Route Handlers
+### 📊 Nextjs with App Router + Route Handlers
 
 - using `app` and route handlers
 
@@ -54,7 +86,7 @@ Req/Bytes counts sampled once per second.
 330 errors (330 timeouts)
 ```
 
-## Nextjs with App Router + Route Handlers + next-connect app
+### 📊 Nextjs with App Router + Route Handlers + next-connect app
 
 - using `app` and route handlers
 - wrap route handlers with `next-connect`
@@ -85,7 +117,7 @@ Req/Bytes counts sampled once per second.
 180 errors (180 timeouts)
 ```
 
-## Nextjs with Pages Router + API routes
+### 📊 Nextjs with Pages Router + API routes
 
 - using `pages` and API route handlers
 
@@ -114,7 +146,7 @@ Req/Bytes counts sampled once per second.
 120k requests in 40.04s, 460 MB read
 ```
 
-## Nextjs with Pages Router + API routes + request pattern matching
+### 📊 Nextjs with Pages Router + API routes + request pattern matching
 
 - using `pages` and API route handlers
 - exposes single endpoint and uses `ts-pattern` to match requests
@@ -146,7 +178,7 @@ Req/Bytes counts sampled once per second.
 115k requests in 40.05s, 441 MB read
 ```
 
-## Fastify app
+### 📊 Fastify app
 
 - using raw `fastify` (without `fastify-cli`)
 
@@ -176,3 +208,7 @@ Req/Bytes counts sampled once per second.
 
 1144k requests in 40.02s, 3.87 GB read
 ```
+
+## 🧑‍💻 About me
+
+[michalczukm.xyz](https://michalczukm.xyz)
